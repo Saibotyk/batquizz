@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    backgroundImage: {
+                        'batman': "url('assets/img/bg-batman.gif')",
+                    },
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                },
+                fontFamily: {
+                    'batang': ['Gowun Batang', '"serif"'],
+                }
+            }
+        }
+    </script>
     <title>BatQuizz</title>
 </head>
-<body>
-    
+
+<body class="bg-black w-100">
+    <header class="flex items-center gap-4 mb-10 bg-batman bg-cover bg-left bg-top">
+        <img class="w-1/5" src="assets/img/logo-big.png" alt="logo de batman">
+        <h1 class="text-[#fac745] font-batang text-4xl lg:text-6xl">Le BatQuizz</h1>
+    </header>
+    <h2 id="nbr-qst" class="font-batang text-[#fac745] text-center text-3xl mb-5 lg:text-4xl lg:mb-10">Question 1</h2>
+    <p id="questions" class="font-batang text-[#fac745] text-center text-1xl mb-5 lg:text-2xl lg:mb-10">Quel est le vrai
+        nom de Batman ?</p>
+    <ul
+        class="flex flex-wrap gap-4 justify-center mx-auto lg:grid lg:grid-cols-2 lg:place-content-around lg:gap-4 lg:h-48 lg:w-1/2">
+        <li id="asw-0" class="font-batang text-1xl bg-[#169DFE] rounded-full py-1 text-center w-2/6 lg:text-2xl lg:w-full lg:font-bold lg:hover:bg-[#fac745] answer">
+            Maurice Lee</li>
+        <li id="asw-1" class="font-batang text-1xl bg-[#169DFE] rounded-full py-1 text-center w-2/6 lg:text-2xl lg:w-full lg:font-bold lg:hover:bg-[#fac745] answer">
+            Lex Luthor</li>
+        <li id="asw-2" class="font-batang text-1xl bg-[#169DFE] rounded-full py-1 text-center w-2/6 lg:text-2xl lg:w-full lg:font-bold lg:hover:bg-[#fac745] answer">
+            Bruce Wayne</li>
+        <li id="asw-3" class="font-batang text-1xl bg-[#169DFE] rounded-full py-1 text-center w-2/6 lg:text-2xl lg:w-full lg:font-bold lg:hover:bg-[#fac745] answer">
+            Stan Lee</li>
+    </ul>
 </body>
+<script src="assets/js/script.js"></script>
+
 </html>
