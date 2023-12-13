@@ -1,3 +1,4 @@
+// Tableau de questions/réponses
 const questionsArray = [
     ["Quel est le vrai nom de Batman ?", [0, "Maurice Lee"], [0, "Lex Luthor"], [1, "Bruce Wayne"], [0, "Stan Lee"]],
     ["Quelle est la ville fictive où se déroulent la plupart des aventures de Batman ?", [0, "Metropolis"], [1, "Gotham City"], [0, "Central City"], [0, "Star City"]],
@@ -12,20 +13,28 @@ const questionsArray = [
 ];
 
 
+// Recuperer les éléments du DOM
 const questions = document.querySelector("#questions");
-const hidden = document.querySelector("#hidden");
-const perso2 = document.querySelector("#perso1");
 const result = document.querySelector("#result");
-const perso1 = document.querySelector("#perso");
-const nbr = document.querySelector("#nbr-qst");
 const asw0 = document.querySelector("#asw-0");
 const asw1 = document.querySelector("#asw-1");
 const asw2 = document.querySelector("#asw-2");
 const asw3 = document.querySelector("#asw-3");
+// Utiliser pour afficher le numéro de la question
+const nbr = document.querySelector("#nbr-qst");
+// Utiliser pour afficher le score
+const hidden = document.querySelector("#hidden");
+// Utiliser pour afficher le nom et le gif du personnage qui félicite le score
+const perso1 = document.querySelector("#perso");
+const perso2 = document.querySelector("#perso1");
 
+
+// Déclarer les variables
 let index = 0;
 let score = 0;
 
+
+// Fonction pour vérifier les réponses
 function checkAnswer(nbr) {
     if (questionsArray[index][nbr][0] === 1) {
         score++;
@@ -34,6 +43,8 @@ function checkAnswer(nbr) {
     displayQuestion(index)
 }
 
+
+// Fonction pour afficher la question ou le résultat
 function displayQuestion(index) {
     if (index < questionsArray.length) {
         nbr.innerText = "Question " + (index + 1);
@@ -50,6 +61,8 @@ function displayQuestion(index) {
     }
 };
 
+
+// Detection du clique sur les réponses
 asw0.addEventListener('click', function (e) {
     checkAnswer(1);
 });
